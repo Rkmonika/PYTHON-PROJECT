@@ -1,0 +1,16 @@
+import os
+import shutil
+sourcepath='D:\A'
+sourcefiles = os.listdir(sourcepath)
+
+destinationpath = 'D:\B\TEXT FILES'
+destinationpath1 = 'D:\B\EXCEL FILES'
+destinationpath2 = 'D:\B\MISCELLENEOUS FILES'
+
+for file in sourcefiles:
+    if file.endswith('.txt'):
+        shutil.move(os.path.join(sourcepath,file), os.path.join(destinationpath,file)) 
+
+    if file.endswith('.xlsx'):
+        shutil.move(os.path.join(sourcepath,file), os.path.join(destinationpath1,file)) 
+    
