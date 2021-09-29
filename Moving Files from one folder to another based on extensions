@@ -1,16 +1,23 @@
-import os
 import shutil
-sourcepath='D:\A'
-sourcefiles = os.listdir(sourcepath)
+import os
 
+source = "D:\A"
 destinationpath = 'D:\B\TEXT FILES'
 destinationpath1 = 'D:\B\EXCEL FILES'
-destinationpath2 = 'D:\B\MISCELLENEOUS FILES'
+destinationpath2 = 'D:\B\MP3 FILES'
 
-for file in sourcefiles:
+files = os.listdir(source)
+
+for file in files:
     if file.endswith('.txt'):
-        shutil.move(os.path.join(sourcepath,file), os.path.join(destinationpath,file)) 
+        new_path = shutil.move(f"{source}/{file}", destinationpath)
+        print(new_path)
 
-    if file.endswith('.xlsx'):
-        shutil.move(os.path.join(sourcepath,file), os.path.join(destinationpath1,file)) 
     
+    if file.endswith('.xlsx'):
+        new_path1 = shutil.move(f"{source}/{file}", destinationpath1)
+        print(new_path1)
+    
+    if file.endswith('.mp3'):
+        new_path2 = shutil.move(f"{source}/{file}", destinationpath2)
+        print(new_path2)
