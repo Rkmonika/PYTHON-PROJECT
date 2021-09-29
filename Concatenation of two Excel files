@@ -1,0 +1,14 @@
+import pandas as pd
+
+df = pd.read_excel (r'C:\Users\DELL\Documents\EXCEL Files\Exam Result2.xlsx')
+df1= pd.read_excel (r'C:\Users\DELL\Documents\EXCEL Files\Exam Result3.xlsx')
+ 
+print (df)
+print (df1)
+
+df3 = [df, df1]
+  
+result = pd.concat(df3, ignore_index= True)
+display(result)
+
+result.to_excel(r'C:\Users\DELL\Documents\EXCEL Files\Exam Result4.xlsx', index = False)
